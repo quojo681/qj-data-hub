@@ -1,180 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#073b2a">
-  <title>QJ DATA HUB | Your Data, Your Connection!</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f8f5;
-      color: #17211b;
-    }
-    header {
-      background: #073b2a;
-      color: white;
-      padding: 22px 18px;
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 29px; }
-    header p { margin: 8px 0 0; color: #b9f5d0; }
-    .hero {
-      background: linear-gradient(135deg, #073b2a, #087f5b);
-      color: white;
-      text-align: center;
-      padding: 38px 20px;
-    }
-    .hero h2 { font-size: 27px; margin: 0 0 12px; }
-    .hero p { line-height: 1.6; }
-    .container {
-      width: 92%;
-      max-width: 600px;
-      margin: 25px auto;
-    }
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 18px;
-      box-shadow: 0 5px 20px #173c2912;
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      font-weight: bold;
-      margin: 17px 0 8px;
-    }
-    select, input {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d5e2d9;
-      border-radius: 10px;
-      background: white;
-      font-size: 16px;
-    }
-    button {
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      padding: 15px;
-      margin-top: 20px;
-      font-size: 16px;
-      font-weight: bold;
-      background: #087f5b;
-      color: white;
-      cursor: pointer;
-    }
-    .notice {
-      background: #fff8dc;
-      padding: 13px;
-      border-radius: 10px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .bundles {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .bundle {
-      padding: 15px 8px;
-      text-align: center;
-      border: 1px solid #d5e2d9;
-      border-radius: 12px;
-      background: #f8fcf9;
-    }
-    .bundle strong {
-      display: block;
-      color: #087f5b;
-      font-size: 21px;
-      margin-bottom: 5px;
-    }
-    footer {
-      background: #073b2a;
-      color: white;
-      text-align: center;
-      padding: 22px;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062d46">
+<title>QJ DATA HUB | Your Data, Your Connection!</title>
+<style>
+:root {
+  --navy:#062d46;
+  --blue:#087eae;
+  --aqua:#18c8d8;
+  --pale:#eafaff;
+  --white:#ffffff;
+  --text:#142c3a;
+  --muted:#627785;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f3faff;
+  color:var(--text);
+}
+header{
+  background:var(--navy);
+  color:white;
+  padding:17px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.brand{font-size:22px;font-weight:900;letter-spacing:.4px}
+.brand span{color:var(--aqua)}
+.tagline{font-size:12px;color:#c4eff8;margin-top:5px}
+.badge{
+  border:1px solid #48dbea;
+  color:#8af3fa;
+  padding:8px 11px;
+  border-radius:20px;
+  font-size:12px;
+  white-space:nowrap;
+}
+.hero{
+  padding:38px 22px 34px;
+  color:white;
+  background:linear-gradient(135deg,#062d46,#087eae 65%,#18aebf);
+  border-radius:0 0 28px 28px;
+}
+.hero .eyebrow{
+  display:inline-block;
+  background:#ffffff20;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+}
+.hero h1{font-size:34px;line-height:1.12;margin:18px 0 12px}
+.hero h1 span{color:#70f4f5}
+.hero p{line-height:1.7;color:#e1f7ff;max-width:500px}
+.primary{
+  display:inline-block;
+  background:var(--aqua);
+  color:#042e45;
+  padding:14px 19px;
+  border-radius:11px;
+  text-decoration:none;
+  font-weight:800;
+  margin-top:10px;
+}
+.trust{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  max-width:650px;
+  margin:18px auto;
+  padding:0 14px;
+}
+.trust div{
+  background:white;
+  padding:13px 5px;
+  text-align:center;
+  border-radius:12px;
+  font-size:12px;
+  box-shadow:0 3px 12px #062d460d;
+}
+.trust strong{display:block;color:var(--blue);margin-bottom:5px}
+.container{width:92%;max-width:760px;margin:28px auto}
+.section-title{font-size:23px;margin:0 0 8px}
+.subtext{color:var(--muted);line-height:1.6;margin-bottom:18px}
+.networks{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.network{
+  background:white;
+  border:1px solid #d7edf5;
+  border-radius:17px;
+  padding:18px 13px;
+  box-shadow:0 5px 17px #062d4609;
+}
+.network-icon{
+  width:44px;height:44px;border-radius:13px;
+  display:grid;place-items:center;
+  background:var(--pale);font-size:20px;
+}
+.network h3{margin:12px 0 6px;font-size:18px}
+.network p{font-size:13px;color:var(--muted);line-height:1.5}
+.network button{
+  width:100%;padding:11px;border:0;border-radius:9px;
+  background:var(--navy);color:white;font-weight:bold;
+}
+.card{
+  background:white;
+  border:1px solid #dcebf1;
+  border-radius:18px;
+  padding:21px;
+  margin-top:23px;
+  box-shadow:0 5px 20px #062d460a;
+}
+label{display:block;font-size:14px;font-weight:bold;margin:17px 0 8px}
+select,input{
+  width:100%;padding:14px;
+  border:1px solid #cfdee7;border-radius:10px;
+  font-size:16px;background:#fbfeff;color:var(--text);
+}
+button{cursor:pointer}
+.buy-button{
+  width:100%;border:0;border-radius:11px;padding:15px;
+  margin-top:20px;background:linear-gradient(90deg,var(--blue),var(--aqua));
+  color:#042e45;font-size:16px;font-weight:800;
+}
+.notice{
+  background:#eafaff;border-left:4px solid var(--aqua);
+  padding:13px;border-radius:8px;
+  color:#37596a;font-size:13px;line-height:1.6;margin-top:17px;
+}
+.steps{display:grid;gap:12px}
+.step{display:flex;gap:12px;align-items:flex-start}
+.step-num{
+  min-width:32px;height:32px;border-radius:10px;
+  display:grid;place-items:center;background:var(--pale);
+  color:var(--blue);font-weight:900;
+}
+.step p{margin:3px 0;color:var(--muted);font-size:14px;line-height:1.5}
+footer{
+  margin-top:38px;background:var(--navy);color:white;
+  text-align:center;padding:28px 18px;line-height:1.8;
+}
+footer p{color:#c4e5f1;font-size:13px}
+@media(min-width:600px){
+  .hero{padding:55px max(30px,calc((100% - 700px)/2))}
+  .hero h1{font-size:45px}
+  .networks{gap:20px}
+}
+</style>
 </head>
 <body>
 <header>
-  <h1>QJ DATA HUB</h1>
-  <p>Your Data, Your Connection!</p>
+  <div>
+    <div class="brand">QJ <span>DATA HUB</span></div>
+    <div class="tagline">Your Data, Your Connection!</div>
+  </div>
+  <div class="badge">GHANA 🇬🇭</div>
 </header>
 <section class="hero">
-  <h2>Stay Connected for Less</h2>
-  <p>Explore data bundles for MTN and Telecel.<br>
-  Simple ordering, convenient payments.</p>
+  <div class="eyebrow">📶 YOUR CONNECTION STARTS HERE</div>
+  <h1>Stay connected.<br><span>Spend smarter.</span></h1>
+  <p>Explore data bundles for MTN and Telecel with a simple, mobile-friendly ordering experience.</p>
+  <a class="primary" href="#networks">Explore Networks ↓</a>
+</section>
+<section class="trust">
+  <div><strong>📱 Mobile-first</strong>Easy on your phone</div>
+  <div><strong>💳 MoMo planned</strong>Secure checkout</div>
+  <div><strong>⚡ Fast service</strong>Delivery integration planned</div>
 </section>
 <main class="container">
-  <section class="card">
-    <h2>Available Data Bundles</h2>
-    <p>Select a network to explore available bundles.</p>
-    <div class="bundles">
-      <div class="bundle"><strong>MTN</strong>Data bundles</div>
-      <div class="bundle"><strong>Telecel</strong>Data bundles</div>
+  <section id="networks">
+    <h2 class="section-title">Choose your network</h2>
+    <p class="subtext">Select your preferred network to get started.</p>
+    <div class="networks">
+      <article class="network">
+        <div class="network-icon">📶</div>
+        <h3>MTN Ghana</h3>
+        <p>Explore available MTN data packages.</p>
+        <button type="button" onclick="chooseNetwork('MTN')">Choose MTN</button>
+      </article>
+      <article class="network">
+        <div class="network-icon">🌐</div>
+        <h3>Telecel Ghana</h3>
+        <p>Explore available Telecel data packages.</p>
+        <button type="button" onclick="chooseNetwork('Telecel')">Choose Telecel</button>
+      </article>
     </div>
-    <p class="notice">
-      Our website is being prepared for live ordering.
-      Bundle availability and final prices will be confirmed
-      before live sales begin.
-    </p>
   </section>
-  <section class="card">
-    <h2>Order Data</h2>
+  <section class="card" id="order">
+    <h2 class="section-title">Prepare your order</h2>
+    <p class="subtext">Choose a network and bundle, then enter the recipient number.</p>
     <form id="orderForm">
-      <label for="network">Choose network</label>
+      <label for="network">Network</label>
       <select id="network" required>
-        <option value="">Select a network</option>
-        <option value="MTN">MTN</option>
-        <option value="Telecel">Telecel</option>
+        <option value="">Choose a network</option>
+        <option value="MTN">MTN Ghana</option>
+        <option value="Telecel">Telecel Ghana</option>
       </select>
-      <label for="bundle">Choose bundle</label>
+      <label for="bundle">Data bundle</label>
       <select id="bundle" required>
-        <option value="">Select a bundle</option>
-        <option value="1GB">1GB</option>
-        <option value="2GB">2GB</option>
-        <option value="3GB">3GB</option>
-        <option value="4GB">4GB</option>
-        <option value="5GB">5GB</option>
-        <option value="6GB">6GB</option>
-        <option value="8GB">8GB</option>
-        <option value="10GB">10GB</option>
+        <option value="">Choose a bundle</option>
+        <option>1GB</option>
+        <option>2GB</option>
+        <option>3GB</option>
+        <option>4GB</option>
+        <option>5GB</option>
+        <option>6GB</option>
+        <option>8GB</option>
+        <option>10GB</option>
       </select>
       <label for="phone">Recipient phone number</label>
-      <input
-        id="phone"
-        type="tel"
-        inputmode="tel"
-        placeholder="Enter recipient phone number"
-        required
-      >
-      <button type="submit">Continue</button>
+      <input id="phone" type="tel" inputmode="tel"
+        placeholder="e.g. 0241234567" autocomplete="tel" required>
+      <button class="buy-button" type="submit">Continue to Order →</button>
     </form>
-    <p id="message" role="status"></p>
-    <p class="notice">
-      This is a website preview. The order form does not yet
-      charge customers or deliver data. Please do not submit
-      real orders until secure payment and delivery are activated.
-    </p>
+    <p id="message" role="status" aria-live="polite"></p>
+    <div class="notice">
+      <strong>Preview mode:</strong> This form does not accept payment or deliver data yet. Live prices, MTN MoMo checkout and Silent Echo delivery must be connected and tested before launch.
+    </div>
+  </section>
+  <section class="card">
+    <h2 class="section-title">How it will work</h2>
+    <p class="subtext">A simple process designed for your convenience.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><p><strong>Choose a network</strong><br>Select MTN or Telecel.</p></div>
+      <div class="step"><div class="step-num">2</div><p><strong>Select your data</strong><br>Choose an available bundle.</p></div>
+      <div class="step"><div class="step-num">3</div><p><strong>Pay securely</strong><br>MTN Mobile Money checkout will be added after integration.</p></div>
+      <div class="step"><div class="step-num">4</div><p><strong>Receive your data</strong><br>Automatic delivery will be enabled after supplier integration and testing.</p></div>
+    </div>
   </section>
 </main>
 <footer>
-  <strong>QJ DATA HUB</strong><br>
-  Your Data, Your Connection!<br>
-  Viepe, Aflao, Ghana
+  <div class="brand">QJ <span style="color:#18c8d8">DATA HUB</span></div>
+  <div>Your Data, Your Connection!</div>
+  <p>Viepe, Aflao, Ghana<br>Customer support details will be added before launch.</p>
+  <small>© 2026 QJ DATA HUB. All rights reserved.</small>
 </footer>
 <script>
-  document.getElementById("orderForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    document.getElementById("message").textContent =
-      "Thank you! Live ordering is not yet activated. Please check back soon.";
-  });
+function chooseNetwork(network) {
+  document.getElementById("network").value = network;
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  document.getElementById("message").textContent =
+    "Thanks for choosing QJ DATA HUB. Online ordering is not active yet; no payment has been taken.";
+});
 </script>
 </body>
 </html>
