@@ -223,6 +223,35 @@ footer p{color:#c4e5f1;font-size:13px}
     grid-template-columns: 1fr;
   }
 }
+.price-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 12px;
+padding: 15px 12px;
+margin: 8px 0;
+border-radius: 12px;
+background: rgba(255, 255, 255, 0.85);
+color: #142c3a;
+font-size: 16px;
+font-weight: 700;
+}
+
+.price-item strong {
+font-size: 17px;
+white-space: nowrap;
+}
+
+#prices .network {
+padding: 22px;
+border-radius: 20px;
+margin-bottom: 18px;
+}
+
+#prices .network h3 {
+margin-top: 0;
+font-size: 23px;
+}
 </style>
 </head>
 <body>
@@ -270,6 +299,37 @@ footer p{color:#c4e5f1;font-size:13px}
       </article>
       </div>
   </section>
+  <section class="card" id="prices">
+  <h2 class="section-title">Popular Data Bundles</h2>
+  <p class="subtext">Choose your network and see our prices.</p>
+
+  <div class="networks">
+    <article class="network" style="background:#ffcc00;color:#111">
+      <h3>MTN Ghana</h3>
+
+      <div class="price-item">1GB <strong>GH₵4.70</strong></div>
+      <div class="price-item">2GB <strong>GH₵9.73</strong></div>
+      <div class="price-item">3GB <strong>GH₵14.02</strong></div>
+      <div class="price-item">4GB <strong>GH₵19.79</strong></div>
+      <div class="price-item">5GB <strong>GH₵24.92</strong></div>
+      <div class="price-item">6GB <strong>GH₵28.12</strong></div>
+      <div class="price-item">8GB <strong>GH₵37.40</strong></div>
+      <div class="price-item">10GB <strong>GH₵46.44</strong></div>
+      <div class="price-item">15GB <strong>GH₵66.77</strong></div>
+      <div class="price-item">20GB <strong>GH₵90.30</strong></div>
+    </article>
+
+    <article class="network" style="background:#e91e32;color:#fff">
+      <h3>Telecel Ghana</h3>
+      <p>Telecel bundle prices coming soon.</p>
+    </article>
+
+    <article class="network" style="background:#203f73;color:#fff">
+      <h3>AirtelTigo Ghana</h3>
+      <p>AirtelTigo bundle prices coming soon.</p>
+    </article>
+  </div>
+</section>
   <section class="card" id="order">
     <h2 class="section-title">Prepare your order</h2>
     <p class="subtext">Choose a network and bundle, then enter the recipient number.</p>
