@@ -151,6 +151,78 @@ footer p{color:#c4e5f1;font-size:13px}
   .hero h1{font-size:45px}
   .networks{gap:20px}
 }
+/* QJ DATA HUB - DATA SHOP CARD DESIGN */
+.networks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.network {
+  border-radius: 22px;
+  padding: 25px;
+  border: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.network:hover {
+  transform: translateY(-3px);
+}
+
+.network:nth-child(1) {
+  background: #ffcc00;
+  color: #111111;
+}
+
+.network:nth-child(2) {
+  background: #e91e32;
+  color: #ffffff;
+}
+
+.network:nth-child(3) {
+  background: #203f73;
+  color: #ffffff;
+}
+
+.network h3 {
+  font-size: 24px;
+  margin: 15px 0 8px;
+}
+
+.network p {
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+.network button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #062d46;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.network:nth-child(1) button {
+  background: #111111;
+  color: #ffffff;
+}
+
+.network:nth-child(2) button,
+.network:nth-child(3) button {
+  background: #ffffff;
+  color: #142c3a;
+}
+
+@media (max-width: 600px) {
+  .networks {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
