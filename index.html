@@ -189,7 +189,14 @@ footer p{color:#c4e5f1;font-size:13px}
         <p>Explore available Telecel data packages.</p>
         <button type="button" onclick="chooseNetwork('Telecel')">Choose Telecel</button>
       </article>
-    </div>
+      
+    <article class="network">
+        <div class="network-icon">🌐</div>
+        <h3>AirtelTigo Ghana</h3>
+        <p>Explore available AirtelTigo data packages.</p>
+        <button type="button" onclick="chooseNetwork('AirtelTigo')">Choose AirtelTigo</button>
+      </article>
+      </div>
   </section>
   <section class="card" id="order">
     <h2 class="section-title">Prepare your order</h2>
@@ -200,6 +207,7 @@ footer p{color:#c4e5f1;font-size:13px}
         <option value="">Choose a network</option>
         <option value="MTN">MTN Ghana</option>
         <option value="Telecel">Telecel Ghana</option>
+        <option value="AirtelTigo">AirtelTigo Ghana</option>
       </select>
       <label for="bundle">Data bundle</label>
       <select id="bundle" required>
@@ -213,6 +221,12 @@ footer p{color:#c4e5f1;font-size:13px}
         <option>8GB</option>
         <option>10GB</option>
       </select>
+            <article class="network">
+        <div class="network-icon">📶</div>
+        <h3>AirtelTigo (AT)</h3>
+        <p>Explore available AirtelTigo data packages.</p>
+        <button type="button" onclick="chooseNetwork('AirtelTigo')">Choose AirtelTigo</button>
+      </article>
       <label for="phone">Recipient phone number</label>
       <input id="phone" type="tel" inputmode="tel"
         placeholder="e.g. 0241234567" autocomplete="tel" required>
