@@ -1,123 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#062d46">
-<title>QJ DATA HUB | Your Data, Your Connection!</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#062d46"><title>QJ DATA HUB | Your Data, Your Connection!</title>
 <style>
-.selected-price{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;margin:12px 0;border:1px solid #b8e7ea;border-radius:14px;background:#eafaff;color:#142c3a;font-weight:700}.selected-price strong{font-size:20px;color:#087eae}.selected-price small{display:block;font-weight:400;color:#627785;margin-top:3px}
 :root{--navy:#062d46;--blue:#087eae;--aqua:#18c8d8;--pale:#eafaff;--text:#142c3a;--muted:#627785}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f3faff;color:var(--text)}
-header{background:var(--navy);color:white;padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-size:22px;font-weight:900;letter-spacing:.4px}.brand span{color:var(--aqua)}
-.tagline{font-size:12px;color:#c4eff8;margin-top:5px}
-.badge{border:1px solid #48dbea;color:#8af3fa;padding:8px 11px;border-radius:20px;font-size:12px;white-space:nowrap}
-.hero{padding:38px 22px 34px;color:white;background:linear-gradient(135deg,#062d46,#087eae 65%,#18aebf);border-radius:0 0 28px 28px}
-.eyebrow{display:inline-block;background:#ffffff20;padding:8px 12px;border-radius:20px;font-size:12px;font-weight:bold}
-.hero h1{font-size:34px;line-height:1.12;margin:18px 0 12px}.hero h1 span{color:#70f4f5}
-.hero p{line-height:1.7;color:#e1f7ff;max-width:500px}
-.primary{display:inline-block;background:var(--aqua);color:#042e45;padding:14px 19px;border-radius:11px;text-decoration:none;font-weight:800;margin-top:10px}
-.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:760px;margin:18px auto;padding:0 14px}
-.trust div{background:white;padding:13px 5px;text-align:center;border-radius:12px;font-size:12px;box-shadow:0 3px 12px #062d460d}
-.trust strong{display:block;color:var(--blue);margin-bottom:5px}
-.container{width:92%;max-width:760px;margin:28px auto}.section-title{font-size:23px;margin:0 0 8px}.subtext{color:var(--muted);line-height:1.6;margin-bottom:18px}
-.networks{display:grid;grid-template-columns:1fr;gap:18px}
-.network{border-radius:22px;padding:22px;border:0;box-shadow:0 8px 24px #00000014}
-.network h3{font-size:23px;margin:8px 0 12px}.network p{font-size:15px;line-height:1.5;margin-bottom:20px}
-.network-icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:#ffffffd9;font-size:20px}
-.network button{width:100%;padding:14px;border:0;border-radius:12px;background:#062d46;color:white;font-size:15px;font-weight:700;cursor:pointer}
-.network:nth-child(1){background:#ffcc00;color:#111}.network:nth-child(2){background:#e91e32;color:#fff}.network:nth-child(3){background:#203f73;color:#fff}
-.network:nth-child(1) button{background:#111;color:white}.network:nth-child(2) button,.network:nth-child(3) button{background:white;color:#142c3a}
-.card{background:white;border:1px solid #dcebf1;border-radius:18px;padding:21px;margin-top:23px;box-shadow:0 5px 20px #062d460a}
-#prices .network{padding:22px;border-radius:22px;margin-bottom:0}
-#prices .network h3{margin-top:0}
-.price-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 12px;margin:8px 0;border-radius:14px;background:#fff9dc;color:#142c3a;font-size:16px;font-weight:700}
-.price-item strong{font-size:17px;white-space:nowrap}
-label{display:block;font-size:14px;font-weight:bold;margin:17px 0 8px}
-select,input{width:100%;padding:14px;border:1px solid #cfdee7;border-radius:10px;font-size:16px;background:#fbfeff;color:var(--text)}
-button{cursor:pointer}.buy-button{width:100%;border:0;border-radius:11px;padding:15px;margin-top:20px;background:linear-gradient(90deg,var(--blue),var(--aqua));color:#042e45;font-size:16px;font-weight:800}
-.notice{background:#eafaff;border-left:4px solid var(--aqua);padding:13px;border-radius:8px;color:#37596a;font-size:13px;line-height:1.6;margin-top:17px}
-.steps{display:grid;gap:12px}.step{display:flex;gap:12px;align-items:flex-start}.step-num{min-width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--pale);color:var(--blue);font-weight:900}
-.step p{margin:3px 0;color:var(--muted);font-size:14px;line-height:1.5}
-footer{margin-top:38px;background:var(--navy);color:white;text-align:center;padding:28px 18px;line-height:1.8}footer p{color:#c4e5f1;font-size:13px}
-@media(min-width:600px){.hero{padding:55px max(30px,calc((100% - 700px)/2))}.hero h1{font-size:45px}.networks{gap:20px}}
-</style>
-</head>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f3faff;color:var(--text)}
+header{background:var(--navy);color:#fff;padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:22px;font-weight:900}.brand span{color:var(--aqua)}.tagline{font-size:12px;color:#c4eff8;margin-top:5px}.badge{border:1px solid #48dbea;color:#8af3fa;padding:8px 11px;border-radius:20px;font-size:12px}
+.hero{padding:38px 22px 34px;color:#fff;background:linear-gradient(135deg,#062d46,#087eae 65%,#18aebf);border-radius:0 0 28px 28px}.eyebrow{display:inline-block;background:#ffffff20;padding:8px 12px;border-radius:20px;font-size:12px;font-weight:bold}.hero h1{font-size:34px;line-height:1.12;margin:18px 0 12px}.hero h1 span{color:#70f4f5}.hero p{line-height:1.7;color:#e1f7ff;max-width:500px}.primary{display:inline-block;background:var(--aqua);color:#042e45;padding:14px 19px;border-radius:11px;text-decoration:none;font-weight:800;margin-top:10px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:760px;margin:18px auto;padding:0 14px}.trust div{background:#fff;padding:13px 5px;text-align:center;border-radius:12px;font-size:12px;box-shadow:0 3px 12px #062d460d}.trust strong{display:block;color:var(--blue);margin-bottom:5px}
+.container{width:92%;max-width:760px;margin:28px auto}.section-title{font-size:23px;margin:0 0 8px}.subtext{color:var(--muted);line-height:1.6;margin-bottom:18px}.networks{display:grid;grid-template-columns:1fr;gap:18px}.network{border-radius:22px;padding:22px;border:0;box-shadow:0 8px 24px #00000014}.network h3{font-size:23px;margin:8px 0 12px}.network p{font-size:15px;line-height:1.5;margin-bottom:20px}.network-icon{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:#ffffffd9;font-size:20px}.network button{width:100%;padding:14px;border:0;border-radius:12px;background:#062d46;color:white;font-size:15px;font-weight:700;cursor:pointer}.network:nth-child(1){background:#ffcc00;color:#111}.network:nth-child(2){background:#e91e32;color:#fff}.network:nth-child(3){background:#203f73;color:#fff}.network:nth-child(1) button{background:#111}.network:nth-child(2) button,.network:nth-child(3) button{background:white;color:#142c3a}
+.card{background:#fff;border:1px solid #dcebf1;border-radius:18px;padding:21px;margin-top:23px;box-shadow:0 5px 20px #062d460a}.price-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 12px;margin:8px 0;border-radius:14px;background:#fff9dc;color:#142c3a;font-size:16px;font-weight:700}.price-item strong{font-size:17px;white-space:nowrap}
+label{display:block;font-size:14px;font-weight:bold;margin:17px 0 8px}select,input{width:100%;padding:14px;border:1px solid #cfdee7;border-radius:10px;font-size:16px;background:#fbfeff;color:var(--text)}button{cursor:pointer}.buy-button{width:100%;border:0;border-radius:11px;padding:15px;margin-top:20px;background:linear-gradient(90deg,var(--blue),var(--aqua));color:#042e45;font-size:16px;font-weight:800}
+.selected-price{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;margin:12px 0;border:1px solid #b8e7ea;border-radius:14px;background:#eafaff;color:#142c3a;font-weight:700}.selected-price strong{font-size:20px;color:#087eae}.selected-price small{display:block;font-weight:400;color:#627785;margin-top:3px}.notice{background:#eafaff;border-left:4px solid var(--aqua);padding:13px;border-radius:8px;color:#37596a;font-size:13px;line-height:1.6;margin-top:17px}.steps{display:grid;gap:12px}.step{display:flex;gap:12px;align-items:flex-start}.step-num{min-width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--pale);color:var(--blue);font-weight:900}.step p{margin:3px 0;color:var(--muted);font-size:14px;line-height:1.5}footer{margin-top:38px;background:var(--navy);color:white;text-align:center;padding:28px 18px;line-height:1.8}footer p{color:#c4e5f1;font-size:13px}.status{font-size:13px;line-height:1.5;color:var(--muted);margin:10px 0}.loading{padding:14px;border-radius:12px;background:#f1f9fc;color:#37596a}@media(min-width:600px){.hero{padding:55px max(30px,calc((100% - 700px)/2))}.hero h1{font-size:45px}.networks{gap:20px}}
+</style></head>
 <body>
 <header><div><div class="brand">QJ <span>DATA HUB</span></div><div class="tagline">Your Data, Your Connection!</div></div><div class="badge">GHANA 🇬🇭</div></header>
 <section class="hero"><div class="eyebrow">📶 YOUR CONNECTION STARTS HERE</div><h1>Stay connected.<br><span>Spend smarter.</span></h1><p>Explore data bundles for MTN and Telecel with a simple, mobile-friendly ordering experience.</p><a class="primary" href="#networks">Explore Networks ↓</a></section>
-<section class="trust"><div><strong>📱 Mobile-first</strong>Easy on your phone</div><div><strong>💳 MoMo planned</strong>Secure checkout</div><div><strong>⚡ Fast service</strong>Delivery integration planned</div></section>
+<section class="trust"><div><strong>📱 Mobile-first</strong>Easy on your phone</div><div><strong>🔎 Live bundles</strong>Supplier data</div><div><strong>⚡ Safe preview</strong>No purchases yet</div></section>
 <main class="container">
-<section id="networks"><h2 class="section-title">Choose your network</h2><p class="subtext">Select your preferred network to get started.</p><div class="networks">
+<section id="networks"><h2 class="section-title">Choose your network</h2><p class="subtext">Select a network to see the bundles returned by the supplier.</p><div class="networks">
 <article class="network"><div class="network-icon">📶</div><h3>MTN Ghana</h3><p>Explore available MTN data packages.</p><button type="button" onclick="chooseNetwork('MTN')">Choose MTN</button></article>
 <article class="network"><div class="network-icon">🌐</div><h3>Telecel Ghana</h3><p>Explore available Telecel data packages.</p><button type="button" onclick="chooseNetwork('Telecel')">Choose Telecel</button></article>
 <article class="network"><div class="network-icon">🌐</div><h3>AirtelTigo Ghana</h3><p>Explore available AirtelTigo data packages.</p><button type="button" onclick="chooseNetwork('AirtelTigo')">Choose AirtelTigo</button></article>
 </div></section>
-<section class="card" id="prices"><h2 class="section-title">Popular Data Bundles</h2><p class="subtext">Choose your network and see our prices.</p><div class="networks">
-<article class="network"><h3>MTN Ghana</h3>
-<div class="price-item">1GB <strong>GH₵4.70</strong></div><div class="price-item">2GB <strong>GH₵9.73</strong></div><div class="price-item">3GB <strong>GH₵14.02</strong></div><div class="price-item">4GB <strong>GH₵19.79</strong></div><div class="price-item">5GB <strong>GH₵24.92</strong></div><div class="price-item">6GB <strong>GH₵28.12</strong></div><div class="price-item">8GB <strong>GH₵37.40</strong></div><div class="price-item">10GB <strong>GH₵46.44</strong></div><div class="price-item">15GB <strong>GH₵66.77</strong></div><div class="price-item">20GB <strong>GH₵90.30</strong></div></article>
-<article class="network"><h3>Telecel Ghana</h3><p>Telecel bundle prices coming soon.</p><button type="button" onclick="chooseNetwork('Telecel')">Choose Telecel</button></article>
-<article class="network"><h3>AirtelTigo Ghana</h3><p>AirtelTigo bundle prices coming soon.</p><button type="button" onclick="chooseNetwork('AirtelTigo')">Choose AirtelTigo</button></article>
-</div></section>
-<section class="card" id="order"><h2 class="section-title">Prepare your order</h2><p class="subtext">Choose a network and bundle, then enter the recipient number.</p>
-<form id="orderForm">
-<label for="networkSelect">Network</label><select id="networkSelect" required><option value="">Choose a network</option><option value="MTN">MTN Ghana</option><option value="Telecel">Telecel Ghana</option><option value="AirtelTigo">AirtelTigo Ghana</option></select>
-<label for="bundle">Data bundle</label><select id="bundle" required><option value="">Choose a bundle</option><option>1GB</option><option>2GB</option><option>3GB</option><option>4GB</option><option>5GB</option><option>6GB</option><option>8GB</option><option>10GB</option><option>15GB</option><option>20GB</option></select>
-<div class="selected-price" id="selectedPrice" aria-live="polite"><div>Selected bundle price<small id="priceNote">Choose an MTN bundle to see its price.</small></div><strong id="priceAmount">GH₵0.00</strong></div>
+<section class="card" id="prices"><h2 class="section-title">Available Data Bundles</h2><p class="subtext">Bundle names and prices are loaded through your secure Cloudflare Worker.</p><p id="bundleStatus" class="status" role="status">Loading bundles…</p><div id="bundleLists" class="networks"><div class="loading">Connecting to the bundle service…</div></div><button id="retryButton" class="buy-button" type="button" style="display:none" onclick="loadBundles()">Try again</button></section>
+<section class="card" id="order"><h2 class="section-title">Prepare your order</h2><p class="subtext">Select a bundle and enter the recipient number. This preview will not place an order.</p><form id="orderForm">
+<label for="networkSelect">Network</label><select id="networkSelect" required><option value="">Choose a network</option><option value="MTN">MTN Ghana</option><option value="Telecel">Telecel Ghana</option><option value="AirtelTigo">AirtelTigo Ghana</option><option value="AT">AT Ghana</option></select>
+<label for="bundle">Data bundle</label><select id="bundle" required><option value="">Load bundles first</option></select>
+<div class="selected-price"><div>Selected bundle price<small id="priceNote">Choose a network and bundle.</small></div><strong id="priceAmount">GH₵—</strong></div>
 <label for="phone">Recipient phone number</label><input id="phone" type="tel" inputmode="tel" placeholder="e.g. 0241234567" autocomplete="tel" required>
-<button class="buy-button" type="submit">Continue to Order →</button></form>
-<p id="message" role="status" aria-live="polite"></p><div class="notice"><strong>Preview mode:</strong> This website is a design preview. It does not accept payment or deliver data yet. MTN MoMo checkout and a data supplier API must be connected and tested before taking customers' money.</div>
-</section>
-<section class="card"><h2 class="section-title">How it will work</h2><p class="subtext">A simple process designed for your convenience.</p><div class="steps">
-<div class="step"><div class="step-num">1</div><p><strong>Choose a network</strong><br>Select your preferred network.</p></div>
-<div class="step"><div class="step-num">2</div><p><strong>Select your data</strong><br>Choose an available bundle.</p></div>
-<div class="step"><div class="step-num">3</div><p><strong>Pay securely</strong><br>MTN Mobile Money checkout will be added after integration.</p></div>
-<div class="step"><div class="step-num">4</div><p><strong>Receive your data</strong><br>Automatic delivery will be enabled after supplier integration and testing.</p></div>
-</div></section>
-</main>
-<footer><div class="brand">QJ <span>DATA HUB</span></div><div>Your Data, Your Connection!</div><p>Viepe, Aflao, Ghana<br>Customer support details will be added before launch.</p><small>© 2026 QJ DATA HUB. All rights reserved.</small></footer>
+<button class="buy-button" type="submit">Review Order →</button></form><p id="message" role="status" aria-live="polite"></p><div class="notice"><strong>Preview mode:</strong> No payment or data purchase is made. Payment and supplier purchases must be tested before accepting customer money.</div></section>
+<section class="card"><h2 class="section-title">How it will work</h2><p class="subtext">A simple process designed for your convenience.</p><div class="steps"><div class="step"><div class="step-num">1</div><p><strong>Choose a network</strong><br>Select your preferred network.</p></div><div class="step"><div class="step-num">2</div><p><strong>Select your data</strong><br>Choose an available bundle.</p></div><div class="step"><div class="step-num">3</div><p><strong>Pay securely</strong><br>Payment checkout will be added after setup.</p></div><div class="step"><div class="step-num">4</div><p><strong>Receive your data</strong><br>Automatic delivery will be enabled after testing.</p></div></div></section>
+</main><footer><div class="brand">QJ <span>DATA HUB</span></div><div>Your Data, Your Connection!</div><p>Viepe, Aflao, Ghana<br>Customer support details will be added before launch.</p><small>© 2026 QJ DATA HUB. All rights reserved.</small></footer>
 <script>
-const bundlePrices = {
-  '1GB': 4.70, '2GB': 9.73, '3GB': 14.02, '4GB': 19.79, '5GB': 24.92,
-  '6GB': 28.12, '8GB': 37.40, '10GB': 46.44, '15GB': 66.77, '20GB': 90.30
-};
-function updateSelectedPrice(){
-  const network = document.getElementById('networkSelect').value;
-  const bundle = document.getElementById('bundle').value;
-  const amount = document.getElementById('priceAmount');
-  const note = document.getElementById('priceNote');
-  if (network === 'MTN' && bundle && bundlePrices[bundle] !== undefined) {
-    amount.textContent = 'GH₵' + bundlePrices[bundle].toFixed(2);
-    note.textContent = bundle + ' MTN Ghana data bundle';
-  } else if (network && network !== 'MTN' && bundle) {
-    amount.textContent = 'Not set';
-    note.textContent = 'Prices for this network have not been added yet.';
-  } else {
-    amount.textContent = 'GH₵0.00';
-    note.textContent = 'Choose an MTN bundle to see its price.';
-  }
-}
-function chooseNetwork(network){
-  document.getElementById('networkSelect').value=network;
-  updateSelectedPrice();
-  document.getElementById('order').scrollIntoView({behavior:'smooth'});
-}
-document.getElementById('networkSelect').addEventListener('change', updateSelectedPrice);
-document.getElementById('bundle').addEventListener('change', updateSelectedPrice);
-document.getElementById('orderForm').addEventListener('submit',function(event){
-  event.preventDefault();
-  updateSelectedPrice();
-  const network = document.getElementById('networkSelect').value;
-  const bundle = document.getElementById('bundle').value;
-  if (network !== 'MTN') {
-    document.getElementById('message').textContent='Prices for this network are not available yet. No payment has been taken.';
-    return;
-  }
-  document.getElementById('message').textContent='Selected: ' + bundle + ' for ' + document.getElementById('priceAmount').textContent + '. Online ordering is not active yet; no payment has been taken.';
-});
-updateSelectedPrice();
-</script>
-</body></html>
+const WORKER_BASE="https://qj-data-hub-api.j0548031298.workers.dev";
+let bundles=[];
+function keyNetwork(v){const s=String(v||"").toLowerCase().replace(/[^a-z0-9]/g,"");if(s.includes("mtn"))return"MTN";if(s.includes("telecel")||s.includes("vodafone"))return"Telecel";if(s==="at"||s.includes("airteltigo")||s.includes("tigo"))return"AT";return v||""}
+function pick(o,keys){for(const k of keys)if(o&&o[k]!==undefined&&o[k]!==null&&o[k]!=="")return o[k]}
+function parseBundles(data){const out=[];const nets=["network","network_name","provider","operator","telco"];const sizes=["datasize","data_size","bundle","bundle_name","package","package_name","size","volume","title","description"];const prices=["price","selling_price","amount","cost","final_price","bundle_price","rate"];
+function walk(x,inherited){if(Array.isArray(x)){x.forEach(v=>walk(v,inherited));return}if(!x||typeof x!=="object")return;const n=pick(x,nets);const network=keyNetwork(n||inherited);const size=pick(x,sizes);const price=pick(x,prices);if(size!==undefined&&price!==undefined){const p=Number(String(price).replace(/[^\d.-]/g,""));if(Number.isFinite(p)&&p>=0&&network)out.push({network,size:String(size),price:p})}for(const [k,v] of Object.entries(x))if(v&&typeof v==="object"){const kn=keyNetwork(k);walk(v,["MTN","Telecel","AT"].includes(kn)?kn:network||inherited)}}walk(data,"");const m=new Map();out.forEach(b=>m.set(`${b.network}|${b.size}|${b.price}`,b));return [...m.values()]}
+function labelNetwork(n){return n==="MTN"?"MTN Ghana":n==="Telecel"?"Telecel Ghana":n==="AT"?"AirtelTigo / AT Ghana":n}
+function money(n){return"GH₵"+Number(n).toFixed(2)}
+function loadBundleSelect(){const net=document.getElementById("networkSelect").value;const sel=document.getElementById("bundle");const old=sel.value;const items=bundles.filter(b=>b.network===net||(net==="AirtelTigo"&&b.network==="AT")||(net==="AT"&&b.network==="AirtelTigo"));sel.innerHTML='<option value="">Choose an available bundle</option>';items.forEach((b,i)=>{const o=document.createElement("option");o.value=String(i);o.textContent=`${b.size} — ${money(b.price)}`;sel.appendChild(o)});if(old&&Number(old)<items.length)sel.value=old;updatePrice()}
+function updatePrice(){const net=document.getElementById("networkSelect").value;const idx=document.getElementById("bundle").value;const items=bundles.filter(b=>b.network===net||(net==="AirtelTigo"&&b.network==="AT")||(net==="AT"&&b.network==="AirtelTigo"));const b=idx!==""?items[Number(idx)]:null;document.getElementById("priceAmount").textContent=b?money(b.price):"GH₵—";document.getElementById("priceNote").textContent=b?`${b.size} ${labelNetwork(b.network)} bundle`:"Choose a network and available bundle."}
+function chooseNetwork(n){document.getElementById("networkSelect").value=n;loadBundleSelect();document.getElementById("order").scrollIntoView({behavior:"smooth"})}
+function renderBundles(){const box=document.getElementById("bundleLists"),status=document.getElementById("bundleStatus");box.innerHTML="";const order=["MTN","Telecel","AT"];let count=0;order.forEach((net,i)=>{const list=bundles.filter(b=>b.network===net);if(!list.length)return;count+=list.length;const card=document.createElement("article");card.className="network";const h=document.createElement("h3");h.textContent=labelNetwork(net);card.appendChild(h);list.forEach(b=>{const row=document.createElement("div");row.className="price-item";row.tabIndex=0;row.style.cursor="pointer";const s=document.createElement("span");s.textContent=b.size;const p=document.createElement("strong");p.textContent=money(b.price);row.append(s,p);row.addEventListener("click",()=>{document.getElementById("networkSelect").value=net==="AT"?"AirtelTigo":net;loadBundleSelect();const options=[...document.getElementById("bundle").options];const found=options.findIndex(o=>o.textContent===`${b.size} — ${money(b.price)}`);if(found>0)document.getElementById("bundle").value=String(found-1);updatePrice();document.getElementById("order").scrollIntoView({behavior:"smooth"})});card.appendChild(row)});box.appendChild(card)});if(!count){box.innerHTML='<div class="loading">The API responded, but its bundle fields were not recognized. We will need to inspect the response format before displaying prices.</div>';status.textContent="Received a response, but could not identify bundle names and prices.";document.getElementById("retryButton").style.display="block";return}status.textContent=`Loaded ${count} bundle option(s) from Silent Echo. Tap a bundle to select it.`;document.getElementById("retryButton").style.display="none";loadBundleSelect()}
+async function loadBundles(){const status=document.getElementById("bundleStatus"),box=document.getElementById("bundleLists");status.textContent="Connecting to Silent Echo…";box.innerHTML='<div class="loading">Loading live bundle information…</div>';document.getElementById("retryButton").style.display="none";try{const r=await fetch(WORKER_BASE+"/api/bundles",{headers:{Accept:"application/json"}});const data=await r.json();if(!r.ok)throw new Error(data.error||`Service returned ${r.status}`);bundles=parseBundles(data);renderBundles()}catch(e){box.innerHTML='<div class="loading">We could not load bundles. Please try again.</div>';status.textContent="Bundle loading failed: "+(e.message||"connection error");document.getElementById("retryButton").style.display="block"}}
+document.getElementById("networkSelect").addEventListener("change",loadBundleSelect);document.getElementById("bundle").addEventListener("change",updatePrice);
+document.getElementById("orderForm").addEventListener("submit",e=>{e.preventDefault();const net=document.getElementById("networkSelect").value,idx=document.getElementById("bundle").value;const items=bundles.filter(b=>b.network===net||(net==="AirtelTigo"&&b.network==="AT")||(net==="AT"&&b.network==="AirtelTigo"));const b=idx!==""?items[Number(idx)]:null;const phone=document.getElementById("phone").value.trim().replace(/[\s-]/g,"");const msg=document.getElementById("message");if(!b){msg.textContent="Please select an available bundle first.";return}if(!/^(0\d{9}|\+233\d{9}|233\d{9})$/.test(phone)){msg.textContent="Enter a valid Ghana phone number, for example 0241234567.";return}msg.textContent=`Review only: ${b.size} for ${money(b.price)} on ${labelNetwork(b.network)}, recipient ${phone}. No purchase or payment has been made.`});
+loadBundles();
+</script></body></html>
