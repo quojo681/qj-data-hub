@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#062d46">
 <title>QJ DATA HUB | Your Data, Your Connection!</title>
 <style>
+.selected-price{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;margin:12px 0;border:1px solid #b8e7ea;border-radius:14px;background:#eafaff;color:#142c3a;font-weight:700}.selected-price strong{font-size:20px;color:#087eae}.selected-price small{display:block;font-weight:400;color:#627785;margin-top:3px}
 :root{--navy:#062d46;--blue:#087eae;--aqua:#18c8d8;--pale:#eafaff;--text:#142c3a;--muted:#627785}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -65,6 +66,7 @@ footer{margin-top:38px;background:var(--navy);color:white;text-align:center;padd
 <form id="orderForm">
 <label for="networkSelect">Network</label><select id="networkSelect" required><option value="">Choose a network</option><option value="MTN">MTN Ghana</option><option value="Telecel">Telecel Ghana</option><option value="AirtelTigo">AirtelTigo Ghana</option></select>
 <label for="bundle">Data bundle</label><select id="bundle" required><option value="">Choose a bundle</option><option>1GB</option><option>2GB</option><option>3GB</option><option>4GB</option><option>5GB</option><option>6GB</option><option>8GB</option><option>10GB</option><option>15GB</option><option>20GB</option></select>
+<div class="selected-price" id="selectedPrice" aria-live="polite"><div>Selected bundle price<small id="priceNote">Choose an MTN bundle to see its price.</small></div><strong id="priceAmount">GH₵0.00</strong></div>
 <label for="phone">Recipient phone number</label><input id="phone" type="tel" inputmode="tel" placeholder="e.g. 0241234567" autocomplete="tel" required>
 <button class="buy-button" type="submit">Continue to Order →</button></form>
 <p id="message" role="status" aria-live="polite"></p><div class="notice"><strong>Preview mode:</strong> This website is a design preview. It does not accept payment or deliver data yet. MTN MoMo checkout and a data supplier API must be connected and tested before taking customers' money.</div>
@@ -78,7 +80,44 @@ footer{margin-top:38px;background:var(--navy);color:white;text-align:center;padd
 </main>
 <footer><div class="brand">QJ <span>DATA HUB</span></div><div>Your Data, Your Connection!</div><p>Viepe, Aflao, Ghana<br>Customer support details will be added before launch.</p><small>© 2026 QJ DATA HUB. All rights reserved.</small></footer>
 <script>
-function chooseNetwork(network){document.getElementById('networkSelect').value=network;document.getElementById('order').scrollIntoView({behavior:'smooth'});}
-document.getElementById('orderForm').addEventListener('submit',function(event){event.preventDefault();document.getElementById('message').textContent='Thanks for choosing QJ DATA HUB. Online ordering is not active yet; no payment has been taken.';});
+const bundlePrices = {
+  '1GB': 4.70, '2GB': 9.73, '3GB': 14.02, '4GB': 19.79, '5GB': 24.92,
+  '6GB': 28.12, '8GB': 37.40, '10GB': 46.44, '15GB': 66.77, '20GB': 90.30
+};
+function updateSelectedPrice(){
+  const network = document.getElementById('networkSelect').value;
+  const bundle = document.getElementById('bundle').value;
+  const amount = document.getElementById('priceAmount');
+  const note = document.getElementById('priceNote');
+  if (network === 'MTN' && bundle && bundlePrices[bundle] !== undefined) {
+    amount.textContent = 'GH₵' + bundlePrices[bundle].toFixed(2);
+    note.textContent = bundle + ' MTN Ghana data bundle';
+  } else if (network && network !== 'MTN' && bundle) {
+    amount.textContent = 'Not set';
+    note.textContent = 'Prices for this network have not been added yet.';
+  } else {
+    amount.textContent = 'GH₵0.00';
+    note.textContent = 'Choose an MTN bundle to see its price.';
+  }
+}
+function chooseNetwork(network){
+  document.getElementById('networkSelect').value=network;
+  updateSelectedPrice();
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('networkSelect').addEventListener('change', updateSelectedPrice);
+document.getElementById('bundle').addEventListener('change', updateSelectedPrice);
+document.getElementById('orderForm').addEventListener('submit',function(event){
+  event.preventDefault();
+  updateSelectedPrice();
+  const network = document.getElementById('networkSelect').value;
+  const bundle = document.getElementById('bundle').value;
+  if (network !== 'MTN') {
+    document.getElementById('message').textContent='Prices for this network are not available yet. No payment has been taken.';
+    return;
+  }
+  document.getElementById('message').textContent='Selected: ' + bundle + ' for ' + document.getElementById('priceAmount').textContent + '. Online ordering is not active yet; no payment has been taken.';
+});
+updateSelectedPrice();
 </script>
 </body></html>
