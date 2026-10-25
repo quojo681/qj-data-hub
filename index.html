@@ -51,7 +51,7 @@ async function loadBundles() {
     const box = document.getElementById("bundleLists");
 
     const confirmed = [
-        // MTN Ghana — existing prices
+        // MTN Ghana
         {network:"MTN",size:"1GB",price:4.70},
         {network:"MTN",size:"2GB",price:9.73},
         {network:"MTN",size:"3GB",price:14.02},
@@ -64,7 +64,7 @@ async function loadBundles() {
         {network:"MTN",size:"20GB",price:90.30},
         {network:"MTN",size:"30GB",price:130.00},
 
-        // Telecel Ghana — updated prices
+        // Telecel Ghana
         {network:"Telecel",size:"10GB",price:43.44},
         {network:"Telecel",size:"15GB",price:60.39},
         {network:"Telecel",size:"20GB",price:81.95},
@@ -74,30 +74,30 @@ async function loadBundles() {
         {network:"Telecel",size:"50GB",price:200.00},
         {network:"Telecel",size:"100GB",price:390.00},
 
-        // AirtelTigo Ghana — updated prices
-        {network:"AirtelTigo",size:"1GB",price:4.95},
-        {network:"AirtelTigo",size:"2GB",price:10.20},
-        {network:"AirtelTigo",size:"3GB",price:15.90},
-        {network:"AirtelTigo",size:"4GB",price:19.40},
-        {network:"AirtelTigo",size:"5GB",price:22.70},
-        {network:"AirtelTigo",size:"6GB",price:27.00},
-        {network:"AirtelTigo",size:"7GB",price:30.90},
-        {network:"AirtelTigo",size:"8GB",price:35.00},
-        {network:"AirtelTigo",size:"9GB",price:40.00},
-        {network:"AirtelTigo",size:"10GB",price:44.55},
-        {network:"AirtelTigo",size:"12GB",price:52.00},
-        {network:"AirtelTigo",size:"15GB",price:65.45},
-        {network:"AirtelTigo",size:"20GB",price:90.00},
-        {network:"AirtelTigo",size:"30GB",price:77.10},
-        {network:"AirtelTigo",size:"40GB",price:88.20},
-        {network:"AirtelTigo",size:"50GB",price:107.00},
-        {network:"AirtelTigo",size:"60GB",price:117.10},
-        {network:"AirtelTigo",size:"80GB",price:164.00},
-        {network:"AirtelTigo",size:"100GB",price:187.20},
-        {network:"AirtelTigo",size:"200GB",price:349.00},
-        {network:"AirtelTigo",size:"250GB",price:402.00},
-        {network:"AirtelTigo",size:"400GB",price:777.00},
-        {network:"AirtelTigo",size:"500GB",price:868.00}
+        // AirtelTigo Ghana — use AT internally
+        {network:"AT",size:"1GB",price:4.95},
+        {network:"AT",size:"2GB",price:10.20},
+        {network:"AT",size:"3GB",price:15.90},
+        {network:"AT",size:"4GB",price:19.40},
+        {network:"AT",size:"5GB",price:22.70},
+        {network:"AT",size:"6GB",price:27.00},
+        {network:"AT",size:"7GB",price:30.90},
+        {network:"AT",size:"8GB",price:35.00},
+        {network:"AT",size:"9GB",price:40.00},
+        {network:"AT",size:"10GB",price:44.55},
+        {network:"AT",size:"12GB",price:52.00},
+        {network:"AT",size:"15GB",price:65.45},
+        {network:"AT",size:"20GB",price:90.00},
+        {network:"AT",size:"30GB",price:77.10},
+        {network:"AT",size:"40GB",price:88.20},
+        {network:"AT",size:"50GB",price:107.00},
+        {network:"AT",size:"60GB",price:117.10},
+        {network:"AT",size:"80GB",price:164.00},
+        {network:"AT",size:"100GB",price:187.20},
+        {network:"AT",size:"200GB",price:349.00},
+        {network:"AT",size:"250GB",price:402.00},
+        {network:"AT",size:"400GB",price:777.00},
+        {network:"AT",size:"500GB",price:868.00}
     ];
 
     status.textContent = "Loading available bundles...";
