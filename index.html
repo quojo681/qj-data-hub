@@ -29,12 +29,14 @@ label{display:block;font-size:14px;font-weight:bold;margin:17px 0 8px}select,inp
 <label for="networkSelect">Network</label><select id="networkSelect" required><option value="">Choose a network</option><option value="MTN">MTN Ghana</option><option value="Telecel">Telecel Ghana</option><option value="AirtelTigo">AirtelTigo Ghana</option><option value="AT">AT Ghana</option></select>
 <label for="bundle">Data bundle</label><select id="bundle" required><option value="">Load bundles first</option></select>
 <div class="selected-price"><div>Selected bundle price<small id="priceNote">Choose a network and bundle.</small></div><strong id="priceAmount">GH₵—</strong></div>
+<label for="email">Your email address</label>
+<input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
 <label for="phone">Recipient phone number</label><input id="phone" type="tel" inputmode="tel" placeholder="e.g. 0241234567" autocomplete="tel" required>
 <button class="buy-button" type="submit">Review Order →</button></form><p id="message" role="status" aria-live="polite"></p><div class="notice"><strong>Preview mode:</strong> No payment or data purchase is made. Payment and supplier purchases must be tested before accepting customer money.</div></section>
 <section class="card"><h2 class="section-title">How it will work</h2><p class="subtext">A simple process designed for your convenience.</p><div class="steps"><div class="step"><div class="step-num">1</div><p><strong>Choose a network</strong><br>Select your preferred network.</p></div><div class="step"><div class="step-num">2</div><p><strong>Select your data</strong><br>Choose an available bundle.</p></div><div class="step"><div class="step-num">3</div><p><strong>Pay securely</strong><br>Payment checkout will be added after setup.</p></div><div class="step"><div class="step-num">4</div><p><strong>Receive your data</strong><br>Automatic delivery will be enabled after testing.</p></div></div></section>
 </main><footer><div class="brand">QJ <span>DATA HUB</span></div><div>Your Data, Your Connection!</div><p>Viepe, Aflao, Ghana<br>Customer support details will be added before launch.</p><small>© 2026 QJ DATA HUB. All rights reserved.</small></footer>
 <script>
-const https://qj-data-hub-test.j0548031298.workers.dev="https://qj-data-hub-api.j0548031298.workers.dev";
+const WORKER_BASE = "https://qj-data-hub-test.j0548031298.workers.dev";
 let bundles=[];
 function keyNetwork(v){const s=String(v||"").toLowerCase().replace(/[^a-z0-9]/g,"");if(s.includes("mtn"))return"MTN";if(s.includes("telecel")||s.includes("vodafone"))return"Telecel";if(s==="at"||s.includes("airteltigo")||s.includes("tigo"))return"AT";return v||""}
 function pick(o,keys){for(const k of keys)if(o&&o[k]!==undefined&&o[k]!==null&&o[k]!=="")return o[k]}
