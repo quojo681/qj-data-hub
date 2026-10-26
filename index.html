@@ -112,6 +112,94 @@ async function loadBundles() {
     status.textContent = "Showing your confirmed bundle prices.";
 }
 document.getElementById("networkSelect").addEventListener("change",loadBundleSelect);document.getElementById("bundle").addEventListener("change",updatePrice);
-document.getElementById("orderForm").addEventListener("submit",e=>{e.preventDefault();const net=document.getElementById("networkSelect").value,idx=document.getElementById("bundle").value;const items=bundles.filter(b=>b.network===net||(net==="AirtelTigo"&&b.network==="AT")||(net==="AT"&&b.network==="AirtelTigo"));const b=idx!==""?items[Number(idx)]:null;const phone=document.getElementById("phone").value.trim().replace(/[\s-]/g,"");const msg=document.getElementById("message");if(!b){msg.textContent="Please select an available bundle first.";return}if(!/^(0\d{9}|\+233\d{9}|233\d{9})$/.test(phone)){msg.textContent="Enter a valid Ghana phone number, for example 0241234567.";return}msg.textContent=`Review only: ${b.size} for ${money(b.price)} on ${labelNetwork(b.network)}, recipient ${phone}. No purchase or payment has been made.`});
+document.getElementById("orderForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const msg = document.getElementById("message");
+  const net = document.getElementById("networkSelect").value;
+  const idx = document.getElementById("bundle").value;
+  const items = bundles.filter(b =>
+    b.network === net ||
+    (net === "AirtelTigo" && b.network === "AT") ||
+    (net === "AT" && b.network === "AirtelTigo")
+  );
+  const b = idx !== "" ? items[Number(idx)] : null;
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim().replace(/[\s-]/g, "");
+  if (!b) {
+    msg.textContent = "Please select an available bundle first.";
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    msg.textContent = "Enter a valid email address.";
+    return;
+  }
+  if (!/^(0\d{9}|\+233\d{9}|233\d{9})$/.test(phone)) {
+    msg.textContent = "Enter a valid Ghana phone number, for example 0241234567.";
+    return;
+  }
+  const button = e.currentTarget.querySelector('button[type="submit"]');
+  msg.textContent = "Connecting to Paystack test checkout…";
+  if (button) button.disabled = true;
+  try {
+    const response = await fetch(`${WORKER_BASE}/api/payment/initialize`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        phone,
+        network: b.network,
+        bundle: b.size
+      })
+    });
+    const result = await response.json();
+    if (!response.ok || !result.authorization_url) {
+      throw new Error(result.error || "Could not start checkout. Please try again.");
+    }
+    msg.textContent = "Opening Paystack test checkout…";
+    window.location.href = result.authorization_url;
+  } catch (error) {
+    msg.textContent = error.message || "Checkout could not be started. Please try again.";
+    if (button) button.disabled = false;
+  }
+});
 loadBundles();
+async function verifyReturnedPayment() {
+  const params = new URLSearchParams(window.location.search);
+  const reference = params.get("reference") || params.get("trxref");
+  if (!reference) return;
+  const msg = document.getElementById("message");
+  msg.textContent = "Verifying your payment with Paystack…";
+  try {
+    const response = await fetch(
+      `${WORKER_BASE}/api/payment/verify`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ reference })
+      }
+    );
+    const result = await response.json();
+    if (!response.ok || !result.verified) {
+      msg.textContent =
+        result.message ||
+        result.error ||
+        "Payment is not confirmed. Please contact support.";
+      return;
+    }
+    msg.textContent =
+      `Payment verified: ${money(result.amount)}. ` +
+      (result.message || "Order recorded.");
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.pathname
+    );
+  } catch (error) {
+    msg.textContent =
+      "Payment status could not be checked. Please try again later. Do not pay again until your payment status is checked.";
+  }
+}
+verifyReturnedPayment();
 </script></body></html>
